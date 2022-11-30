@@ -6,28 +6,29 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.crm.crm.model.Oportunity;
 import com.crm.crm.model.User;
+import com.crm.crm.service.OportunityService;
 import com.crm.crm.service.UserService;
 
 
 @SpringBootTest
-class CrmApplicationTests {
-
+public class createTestPage {
+	
 	@Test
 	void contextLoads() {
 	}
+	
+	
 	@Autowired
-	UserService userService;
+	OportunityService oportunityService;
 	@Test
-	void saveUserWithUserNameAndPasswordCorrect() {
-		User user=new User("userJaviSoto","passJaviSoto");
-		User savedUser=userService.saveUser(user);
-		System.out.println(savedUser);
-		System.out.println(user);
-		assertEquals(user.getUserName(), savedUser.getUserName());
-		assertEquals(user.getPassword(), savedUser.getPassword());
+	void saveOportunityWithAllImputsCorrect() {
+		
+		Oportunity oportunity=new Oportunity( null, null, null, null, null);
+		Oportunity oportunityTest=oportunityService.addOportunity(oportunity);
+		
+		
 	}
 
-	
-	
 }

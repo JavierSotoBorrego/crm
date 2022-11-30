@@ -28,6 +28,9 @@ public class User {
 		this.userName = userName;
 		this.password = password;
 	}
+	public User() {
+		super();
+	}
 	public int getId() {
 		return id;
 	}
@@ -50,10 +53,6 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + "]";
 	}
-	
-	
-
-	
 
 
 }
