@@ -18,7 +18,7 @@ public class Oportunity {
 	private String surname;
 	
 	@Column(name = "typeContact")
-	private TypeContact typeContact;
+	private String typeContact;
 	
 	@Column(name = "bClient")
 	private Boolean bClient;
@@ -26,7 +26,7 @@ public class Oportunity {
 	@Column(name = "datecontact")
 	private Date datecontact;
 
-	public Oportunity(int id, String name, String surname, TypeContact typeContact, Boolean bClient,
+	public Oportunity(int id, String name, String surname, String typeContact, Boolean bClient,
 			Date datecontact) {
 		this.id = id;
 		this.name = name;
@@ -36,7 +36,7 @@ public class Oportunity {
 		this.datecontact = datecontact;
 	}
 
-	public Oportunity(String name, String surname, TypeContact typeContact, Boolean bClient, Date datecontact) {
+	public Oportunity(String name, String surname, String typeContact, Boolean bClient, Date datecontact) {
 		super();
 		this.name = name;
 		this.surname = surname;
@@ -70,12 +70,12 @@ public class Oportunity {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-
-	public com.crm.crm.model.TypeContact getTypeContact() {
+	
+	public String getTypeContact() {
 		return typeContact;
 	}
 
-	public void setTypeContact(com.crm.crm.model.TypeContact typeContact) {
+	public void setTypeContact(String typeContact) {
 		this.typeContact = typeContact;
 	}
 
