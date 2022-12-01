@@ -6,6 +6,8 @@ import java.util.Date;
 
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "oportunities")
 public class Oportunity {
@@ -29,6 +31,7 @@ public class Oportunity {
 	@Column(name = "bClient")
 	private Boolean bClient;
 
+	@JsonFormat(pattern="dd/MM/yyyy")
 	@NonNull
 	@Column(name = "datecontact")
 	private Date datecontact;

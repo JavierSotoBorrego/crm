@@ -26,8 +26,8 @@ public class OportunityService {
 		
 	}
 	
-	public List<Oportunity> findOportunitiesByName(Oportunity oportunity){
-		return null;
+	public List<Oportunity> findOportunitiesByName(String oportunityName){	
+		return oportunityRegisterRepository.findByName(oportunityName);
 	}
 	
 	public List<Oportunity> findOportunitiesBySurName(Oportunity oportunity){
