@@ -9,9 +9,8 @@ import com.crm.crm.model.Oportunity;
 
 public interface OportunityRegisterRepository extends JpaRepository<Oportunity,Long>{
 //	  List<Oportunity> findByClient(boolean client);
-//	  List<Oportunity> findByID(int ID);
 //	  List<Oportunity> findByName(String name);
-//	  List<Oportunity> findByTypeContact(TypeContact typeTontact);
+//	  List<Oportunity> findByTypeContact(String typeTontact);
 //	  List<Oportunity> findByDate(Date date);
 
 	

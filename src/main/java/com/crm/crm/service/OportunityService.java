@@ -15,9 +15,35 @@ public class OportunityService {
 	OportunityRegisterRepository oportunityRegisterRepository;
 
 	public Oportunity addOportunity(Oportunity oportunity) {
-		return oportunityRegisterRepository.save(oportunity);
-	}
+		
+			return oportunityRegisterRepository.save(oportunity);
 	
 
+	}	
+	
+	public List<Oportunity> findAllOportunities(){
+		return oportunityRegisterRepository.findAll();
+		
+	}
+	
+	public List<Oportunity> findOportunitiesByName(Oportunity oportunity){
+		return null;
+	}
+	
+	public List<Oportunity> findOportunitiesBySurName(Oportunity oportunity){
+		return null;
+	}
+	
+	public List<Oportunity> findOportunitiesByDClient(Oportunity oportunity){
+		return null;
+	}
+	
+	public List<Oportunity> findOportunitiesByTypeContact(Oportunity oportunity){
+		return null;
+	}
+	
+	public List<Oportunity> findOportunitiesByDate(Oportunity oportunity){
+		return null;
+	}
 	
 }
