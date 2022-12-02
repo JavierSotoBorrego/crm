@@ -30,15 +30,8 @@ public class OportunityTest {
 
 	@Test
 	void saveOportunityWithAllImputsCorrect() {
-		SimpleDateFormat sDate = new SimpleDateFormat("dd/MM/yy");
-		Date date = null;
-		try {
-			date = sDate.parse("30/11/2022");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Oportunity oportunity = new Oportunity("Javier", "Soto", "955512454", true, date);
+
+		Oportunity oportunity = new Oportunity("Javier", "Soto", "955512454", true, "01/12/2022");
 		Oportunity oportunityTest = oportunityService.addOportunity(oportunity);
 		assertEquals(oportunity.getName(), oportunityTest.getName());
 		assertEquals(oportunity.getSurname(), oportunityTest.getSurname());
@@ -50,9 +43,10 @@ public class OportunityTest {
 
 	@Test
 	void addOportinitiesToListCorrect() {
+		int iOportunitySizeBefore = oportunityService.findAllOportunities().size();
 		this.newOportunity();
-		int i = oportunityService.findAllOportunities().size();
-		assertEquals(1, i);
+		int iOportunitySizeAfter = oportunityService.findAllOportunities().size();
+		assertEquals(iOportunitySizeBefore+1, iOportunitySizeAfter);
 	}
 
 	@Test
@@ -66,7 +60,7 @@ public class OportunityTest {
 	@Test
 	void updateOportunityClientCorrect() {
 		Oportunity newOportunity = this.newOportunity();
-		Oportunity oportunitySetted=oportunityService.updateOportunityClient(newOportunity,false);		
+		Oportunity oportunitySetted=oportunityService.updateOportunityClient(newOportunity,false);	
 		assertNotEquals(newOportunity.getbClient(), oportunitySetted.getbClient());
 	}
 
@@ -78,15 +72,7 @@ public class OportunityTest {
 	
 	
 	Oportunity newOportunity() {
-		SimpleDateFormat sDate = new SimpleDateFormat("dd/MM/yy");
-		Date date = null;
-		try {
-			date = sDate.parse("30/11/2022");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Oportunity oportunity = new Oportunity(1, "Javier", "Soto", "955512454", true, date);
+		Oportunity oportunity = new Oportunity("Javier", "Soto", "955512454", true, "01/12/2022");
 		return oportunityService.addOportunity(oportunity);
 	}
 

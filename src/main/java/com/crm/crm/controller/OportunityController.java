@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.crm.crm.model.Oportunity;
 import com.crm.crm.service.OportunityService;
 
-@CrossOrigin(origins = "http://localhost:8899")
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/app")
+@RequestMapping
 public class OportunityController {
 	
 @Autowired

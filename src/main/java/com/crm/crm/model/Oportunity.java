@@ -31,17 +31,16 @@ public class Oportunity {
 	@Column(name = "bClient")
 	private Boolean bClient;
 
-	@JsonFormat(pattern="dd/MM/yyyy")
 	@NonNull
 	@Column(name = "datecontact")
-	private Date datecontact;
+	private String datecontact;
 
 	public Oportunity() {
 		super();
 	}
 
 	public Oportunity(int id, String name, String surname, String typeContact, Boolean bClient,
-			Date datecontact) {
+			String datecontact) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
@@ -50,7 +49,7 @@ public class Oportunity {
 		this.datecontact = datecontact;
 	}
 
-	public Oportunity(String name, String surname, String typeContact, Boolean bClient, Date datecontact) {
+	public Oportunity(String name, String surname, String typeContact, Boolean bClient, String datecontact) {
 		super();
 		this.name = name;
 		this.surname = surname;
@@ -59,7 +58,15 @@ public class Oportunity {
 		this.datecontact = datecontact;
 	}
 
+	
+	
 
+	public Oportunity(String name, String surname, String typeContact) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.typeContact = typeContact;
+	}
 
 	public int getId() {
 		return id;
@@ -101,11 +108,11 @@ public class Oportunity {
 		this.bClient = bClient;
 	}
 
-	public Date getDatecontact() {
+	public String getDatecontact() {
 		return datecontact;
 	}
 
-	public void setDatecontact(Date datecontact) {
+	public void setDatecontact(String datecontact) {
 		this.datecontact = datecontact;
 	}
 
