@@ -46,4 +46,11 @@ public class OportunityService {
 		return null;
 	}
 	
+	public Oportunity updateOportunityClient(Oportunity oportunity,Boolean bClient) {
+		Oportunity oportunityToUpdate=(Oportunity) oportunityRegisterRepository.findByName(oportunity.getName());
+		oportunityToUpdate.setbClient(bClient);
+		return oportunityRegisterRepository.save(oportunityToUpdate);
+		
+	}
+	
 }
