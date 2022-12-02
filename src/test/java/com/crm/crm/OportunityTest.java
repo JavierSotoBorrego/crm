@@ -1,6 +1,7 @@
 package com.crm.crm;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -65,9 +66,8 @@ public class OportunityTest {
 	@Test
 	void updateOportunityClientCorrect() {
 		Oportunity newOportunity = this.newOportunity();
-		Oportunity oportunityAdded=oportunityService.addOportunity(newOportunity);
-		Oportunity oportunitySetted=oportunityService.updateOportunityClient(newOportunity,newOportunity.getbClient());		
-		assertEquals(oportunityAdded.getbClient(), oportunitySetted.getbClient());
+		Oportunity oportunitySetted=oportunityService.updateOportunityClient(newOportunity,false);		
+		assertNotEquals(newOportunity.getbClient(), oportunitySetted.getbClient());
 	}
 
 	
