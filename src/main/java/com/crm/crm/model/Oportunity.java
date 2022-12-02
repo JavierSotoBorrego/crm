@@ -1,12 +1,13 @@
 package com.crm.crm.model;
 
-import jakarta.persistence.*;
-
-import java.util.Date;
-
 import org.springframework.lang.NonNull;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "oportunities")
@@ -28,8 +29,8 @@ public class Oportunity {
 	private String typeContact;
 
 	@NonNull
-	@Column(name = "bClient")
-	private Boolean bClient;
+	@Column(name = "clientBoolean")
+	private Boolean clientBoolean;
 
 	@NonNull
 	@Column(name = "datecontact")
@@ -39,22 +40,22 @@ public class Oportunity {
 		super();
 	}
 
-	public Oportunity(int id, String name, String surname, String typeContact, Boolean bClient,
+	public Oportunity(int id, String name, String surname, String typeContact, Boolean clientBoolean,
 			String datecontact) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.typeContact = typeContact;
-		this.bClient = bClient;
+		this.clientBoolean = clientBoolean;
 		this.datecontact = datecontact;
 	}
 
-	public Oportunity(String name, String surname, String typeContact, Boolean bClient, String datecontact) {
+	public Oportunity(String name, String surname, String typeContact, Boolean clientBoolean, String datecontact) {
 		super();
 		this.name = name;
 		this.surname = surname;
 		this.typeContact = typeContact;
-		this.bClient = bClient;
+		this.clientBoolean = clientBoolean;
 		this.datecontact = datecontact;
 	}
 
@@ -100,12 +101,12 @@ public class Oportunity {
 		this.typeContact = typeContact;
 	}
 
-	public Boolean getbClient() {
-		return bClient;
+	public Boolean getClientBoolean() {
+		return clientBoolean;
 	}
 
-	public void setbClient(Boolean bClient) {
-		this.bClient = bClient;
+	public void setbClient(Boolean clientBoolean) {
+		this.clientBoolean = clientBoolean;
 	}
 
 	public String getDatecontact() {
@@ -119,7 +120,7 @@ public class Oportunity {
 	@Override
 	public String toString() {
 		return "Oportunity [id=" + id + ", name=" + name + ", surname=" + surname + ", typeContact=" + typeContact
-				+ ", bClient=" + bClient + ", datecontact=" + datecontact + "]";
+				+ ", bClient=" + clientBoolean + ", datecontact=" + datecontact + "]";
 	}
 	
 }

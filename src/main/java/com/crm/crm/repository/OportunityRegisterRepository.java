@@ -8,11 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.crm.crm.model.Oportunity;
 
 public interface OportunityRegisterRepository extends JpaRepository<Oportunity, Long> {
-//	  List<Oportunity> findByClient(boolean client);
 	List<Oportunity> findByName(String name);
 
 	Oportunity findTop1ByName(String name);
 //	  List<Oportunity> findByTypeContact(String typeTontact);
-//	  List<Oportunity> findByDate(Date date);
+//	  List<Oportunity> findByDate(String date);
+
+	List<Oportunity> findByClientBoolean(Boolean bclient);
 
 }

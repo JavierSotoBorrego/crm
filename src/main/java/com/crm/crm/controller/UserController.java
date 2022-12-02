@@ -17,6 +17,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
+	
 	@PostMapping("/saveUser")
 	public User saveUser(@RequestBody User user) {
 		return userService.saveUser(user);		

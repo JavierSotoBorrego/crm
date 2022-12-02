@@ -34,6 +34,11 @@ OportunityService oportunityService;
 		
 	}
 	
+	@GetMapping("/oportunities/client")
+	public List<Oportunity> showOportunityClients(){
+		return oportunityService.findOportunitiesByDClient(true);
+		
+	}
 
 	
 }

@@ -3,13 +3,8 @@ package com.crm.crm;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.crm.crm.model.Oportunity;
@@ -36,7 +31,7 @@ public class OportunityTest {
 		assertEquals(oportunity.getName(), oportunityTest.getName());
 		assertEquals(oportunity.getSurname(), oportunityTest.getSurname());
 		assertEquals(oportunity.getTypeContact(), oportunityTest.getTypeContact());
-		assertEquals(oportunity.getbClient(), oportunityTest.getbClient());
+		assertEquals(oportunity.getClientBoolean(), oportunityTest.getClientBoolean());
 		assertEquals(oportunity.getDatecontact(), oportunityTest.getDatecontact());
 
 	}
@@ -61,7 +56,7 @@ public class OportunityTest {
 	void updateOportunityClientCorrect() {
 		Oportunity newOportunity = this.newOportunity();
 		Oportunity oportunitySetted=oportunityService.updateOportunityClient(newOportunity,false);	
-		assertNotEquals(newOportunity.getbClient(), oportunitySetted.getbClient());
+		assertNotEquals(newOportunity.getClientBoolean(), oportunitySetted.getClientBoolean());
 	}
 
 	

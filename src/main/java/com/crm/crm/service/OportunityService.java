@@ -34,8 +34,8 @@ public class OportunityService {
 		return null;
 	}
 	
-	public List<Oportunity> findOportunitiesByDClient(Oportunity oportunity){
-		return null;
+	public List<Oportunity> findOportunitiesByDClient(Boolean bclient){
+		return oportunityRegisterRepository.findByClientBoolean(bclient);
 	}
 	
 	public List<Oportunity> findOportunitiesByTypeContact(Oportunity oportunity){
